@@ -3,8 +3,7 @@ const axios = require('axios');
 const app = express();
 app.use(express.json());
 
-const secretKey = 'sk_sbox_blrwqpi5cf2ztkqkhj6co7lgmq';
-
+const secretKey = process.env.CHECKOUT_SECRET_KEY;
 app.post('/create-payment', async (req, res) => {
   try {
     const response = await axios.post(
